@@ -13,11 +13,11 @@ let seho: User = {
 function getUser(user:User) {
   console.log(user)
 }
-const capt = {
+const capt2 = {
   name: 'jin',
   age:100
 }
-getUser(capt)
+getUser(capt2)
 
 //함수의 스팩(구조)에 인터페이스를 활용
 interface Sumfunction{
@@ -34,4 +34,34 @@ interface StringArray{
 }
 
 var arr5:StringArray = ['a', 'b', 'c'];
-arr5[0] ='10'
+arr5[0] = '10'
+
+//딕셔너리 패턴
+interface StringRegexDictionary {
+  [key: string]: RegExp;
+}
+
+var obj2: StringRegexDictionary = {
+  cssFile: /\.css$/,
+  jsFile:/\.js$/
+}
+
+Object.keys(obj2).forEach(function (value) {
+  
+})
+
+//인터페이스 확장
+interface person{
+  name: string;
+  age: number;
+}
+
+interface Developer1 extends person{
+  language: string;
+}
+
+var cap: Developer1 = {
+  name: 'jin',
+  age: 100,
+  language:'ts'
+}
